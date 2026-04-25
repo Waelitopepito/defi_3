@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tombola de l'UPOS 2027 — Wikipédia</title>
+<link href="https://fonts.googleapis.com/css2?family=Linux+Libertine&family=Linux+Biolinum&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wiki-bg: #f8f9fa;
+    --wiki-paper: #ffffff;
+    --wiki-text: #202122;
+    --wiki-text-secondary: #54595d;
+    --wiki-link: #3366cc;
+    --wiki-link-visited: #795cb2;
+    --wiki-link-redlink: #ba0000;
+    --wiki-border: #a2a9b1;
+    --wiki-border-light: #c8ccd1;
+    --wiki-border-soft: #eaecf0;
+    --wiki-infobox-bg: #f8f9fa;
+    --wiki-nav-bg: #eaecf0;
+    --wiki-nav-hover: #ffffff;
+    --wiki-heading-border: #a2a9b1;
+    --wiki-quality-green: #339933;
+    --wiki-featured-bg: #fef6e7;
+    --wiki-featured-border: #fc3;
+    --wiki-toc-bg: #f8f9fa;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Linux Libertine', 'Times New Roman', Georgia, serif;
+    background: var(--wiki-bg);
+    color: var(--wiki-text);
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ============== HEADER ============== */
+  .wiki-header {
+    background: var(--wiki-paper);
+    border-bottom: 1px solid var(--wiki-border-light);
+    padding: 0;
+  }
+  .wiki-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+  }
+  .wiki-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .wiki-logo-img {
+    width: 36px;
+    height: 36px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 103 94'><path fill='%23000' d='M86.1 15.2c.3-.4-.3-.7-1.4-.8L72.7 14c-1.1 0-1.9.2-2.1.5L46.7 64l.5 1.1 22.4-45.3c.3-.6 1.2-1 2.6-1l15 .5c1.4 0 2.1-.1 2.3-.5.2-.4-.1-.8-.3-1.2l-3.1-3z'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .wiki-logo-img::before {
+    content: "W";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Linux Libertine', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+  }
+  .wiki-logo-text {
+    font-family: 'Linux Libertine', serif;
+    font-size: 18px;
+    line-height: 1.15;
+    color: #000;
+  }
+  .wiki-logo-text strong {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .wiki-logo-text em {
+    display: block;
+    font-style: italic;
+    font-size: 11px;
+    color: #54595d;
+    letter-spacing: 0.02em;
+  }
+
+  .wiki-search {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 30px;
+    position: relative;
+  }
+  .wiki-search input {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid var(--wiki-border);
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 13px;
+    background: #fff;
+  }
+  .wiki-search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 36px;
+    border: 1px solid var(--wiki-border);
+    background: var(--wiki-nav-bg);
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+  }
+  .wiki-header-links {
+    display: flex;
+    gap: 14px;
+    font-size: 13px;
+  }
+  .wiki-header-links a {
+    color: var(--wiki-link);
+    text-decoration: none;
+  }
+  .wiki-header-links a:hover {
+    text-decoration: underline;
+  }
+
+  /* ============== NAV TABS ============== */
+  .wiki-tabs {
+    background: var(--wiki-bg);
+    border-bottom: 1px solid var(--wiki-border-light);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-end;
+    height: 36px;
+    gap: 0;
+  }
+  .wiki-tab {
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--wiki-link);
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+    font-family: sans-serif;
+  }
+  .wiki-tab.active {
+    background: var(--wiki-paper);
+    border-color: var(--wiki-border-light);
+    color: var(--wiki-text);
+    position: relative;
+    top: 1px;
+  }
+  .wiki-tab:hover:not(.active) {
+    background: var(--wiki-nav-hover);
+  }
+  .wiki-tabs-spacer { flex: 1; }
+
+  /* ============== LAYOUT ============== */
+  .wiki-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--wiki-paper);
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    min-height: 100vh;
+  }
+  @media (max-width: 900px) {
+    .wiki-layout { grid-template-columns: 1fr; }
+    .wiki-sidebar { display: none; }
+  }
+
+  .wiki-sidebar {
+    background: var(--wiki-paper);
+    padding: 20px 10px;
+    border-right: 1px solid var(--wiki-border-soft);
+    font-family: sans-serif;
+    font-size: 12px;
+  }
+  .wiki-sidebar-section {
+    margin-bottom: 20px;
+  }
+  .wiki-sidebar-title {
+    color: var(--wiki-text-secondary);
+    font-weight: normal;
+    padding: 4px 8px;
+    margin-bottom: 2px;
+    text-transform: none;
+  }
+  .wiki-sidebar-link {
+    display: block;
+    padding: 3px 8px;
+    color: var(--wiki-link);
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .wiki-sidebar-link:hover { text-decoration: underline; }
+
+  /* ============== CONTENT ============== */
+  .wiki-content {
+    padding: 16px 40px 60px;
+    min-width: 0;
+  }
+  @media (max-width: 900px) {
+    .wiki-content { padding: 16px 20px 60px; }
+  }
+
+  .wiki-breadcrumb {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: var(--wiki-text-secondary);
+    padding-bottom: 8px;
+  }
+
+  /* Featured article banner */
+  .wiki-featured {
+    background: var(--wiki-featured-bg);
+    border: 1px solid var(--wiki-featured-border);
+    border-radius: 3px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .wiki-featured-star {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  h1.wiki-title {
+    font-family: 'Linux Libertine', serif;
+    font-size: 28px;
+    font-weight: normal;
+    border-bottom: 1px solid var(--wiki-border-light);
+    padding-bottom: 4px;
+    margin: 0 0 4px;
+    line-height: 1.3;
+  }
+  .wiki-subtitle {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: var(--wiki-text-secondary);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Linux Libertine', serif;
+    font-size: 22px;
+    font-weight: normal;
+    border-bottom: 1px solid var(--wiki-border-light);
+    padding-bottom: 2px;
+    margin: 24px 0 10px;
+    line-height: 1.3;
+  }
+  h3 {
+    font-family: 'Linux Libertine', serif;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 18px 0 8px;
+    line-height: 1.3;
+  }
+  h4 {
+    font-family: 'Linux Libertine', serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 14px 0 6px;
+  }
+
+  p {
+    margin: 0 0 10px;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  a {
+    color: var(--wiki-link);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a.visited { color: var(--wiki-link-visited); }
+  a.redlink { color: var(--wiki-link-redlink); }
+  a.redlink:hover { color: var(--wiki-link-redlink); }
+
+  sup.reference a {
+    font-size: 10px;
+    vertical-align: super;
+  }
+
+  /* ============== INFOBOX ============== */
+  .wiki-infobox {
+    float: right;
+    clear: right;
+    width: 280px;
+    margin: 0 0 16px 16px;
+    border: 1px solid var(--wiki-border);
+    background: var(--wiki-infobox-bg);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  @media (max-width: 700px) {
+    .wiki-infobox {
+      float: none;
+      width: 100%;
+      margin: 0 0 16px 0;
+    }
+  }
+  .wiki-infobox-title {
+    background: #cedff2;
+    padding: 6px 10px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid var(--wiki-border);
+    font-family: 'Linux Libertine', serif;
+    font-size: 14px;
+  }
+  .wiki-infobox-image {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--wiki-border-soft);
+    background: #fff;
+  }
+  .wiki-infobox-caption {
+    font-size: 11px;
+    color: var(--wiki-text-secondary);
+    text-align: center;
+    padding: 4px 10px 8px;
+    font-style: italic;
+    background: #fff;
+    border-bottom: 1px solid var(--wiki-border-soft);
+  }
+  .wiki-infobox-section {
+    background: #cedff2;
+    padding: 4px 10px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid var(--wiki-border-soft);
+    border-bottom: 1px solid var(--wiki-border-soft);
+  }
+  .wiki-infobox table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .wiki-infobox th, .wiki-infobox td {
+    padding: 4px 8px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 12px;
+    border-bottom: 1px solid var(--wiki-border-soft);
+  }
+  .wiki-infobox th {
+    background: transparent;
+    font-weight: normal;
+    color: var(--wiki-text-secondary);
+    width: 42%;
+    font-size: 11px;
+  }
+  .wiki-infobox td {
+    color: var(--wiki-text);
+  }
+
+  /* Mini logo BDA dans infobox */
+  .bda-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background: #3B6D11;
+    color: #fff;
+    font-family: 'Linux Libertine', serif;
+    font-style: italic;
+    font-size: 44px;
+    border-radius: 4px;
+  }
+
+  /* ============== TOC ============== */
+  .wiki-toc {
+    background: var(--wiki-toc-bg);
+    border: 1px solid var(--wiki-border-light);
+    padding: 10px 14px;
+    margin: 16px 0;
+    display: inline-block;
+    min-width: 280px;
+    font-size: 13px;
+  }
+  .wiki-toc-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-family: sans-serif;
+  }
+  .wiki-toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: toc-counter;
+  }
+  .wiki-toc ol li {
+    counter-increment: toc-counter;
+    padding: 2px 0;
+  }
+  .wiki-toc ol li::before {
+    content: counters(toc-counter, ".") " ";
+    color: var(--wiki-text);
+    padding-right: 4px;
+  }
+  .wiki-toc ol ol {
+    margin-left: 18px;
+  }
+
+  /* ============== FIGURES / IMAGES ============== */
+  .wiki-thumb {
+    border: 1px solid var(--wiki-border-soft);
+    background: var(--wiki-infobox-bg);
+    padding: 4px;
+    float: right;
+    margin: 4px 0 10px 16px;
+    max-width: 260px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .wiki-thumb-inner {
+    background: #fff;
+    border: 1px solid var(--wiki-border-soft);
+    padding: 10px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wiki-text-secondary);
+    font-family: sans-serif;
+    font-size: 11px;
+    text-align: center;
+  }
+  .wiki-thumb-caption {
+    padding: 4px 6px;
+    color: var(--wiki-text-secondary);
+    font-size: 11px;
+  }
+
+  /* ============== BLOCKQUOTE ============== */
+  blockquote {
+    border-left: 4px solid var(--wiki-border-light);
+    padding: 4px 16px;
+    margin: 10px 20px;
+    font-style: italic;
+    color: var(--wiki-text-secondary);
+  }
+
+  /* ============== TABLE ============== */
+  table.wiki-table {
+    border-collapse: collapse;
+    border: 1px solid var(--wiki-border);
+    margin: 12px 0;
+    font-size: 13px;
+    width: 100%;
+  }
+  table.wiki-table th, table.wiki-table td {
+    border: 1px solid var(--wiki-border);
+    padding: 6px 10px;
+    text-align: left;
+  }
+  table.wiki-table th {
+    background: #eaecf0;
+    font-weight: bold;
+  }
+  table.wiki-table caption {
+    font-size: 12px;
+    padding: 4px;
+    font-style: italic;
+    color: var(--wiki-text-secondary);
+  }
+
+  /* ============== LISTS ============== */
+  ul.wiki-ul {
+    margin: 8px 0;
+    padding-left: 24px;
+  }
+  ul.wiki-ul li {
+    margin-bottom: 4px;
+  }
+
+  /* ============== REFERENCES ============== */
+  .wiki-references {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .wiki-references ol {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  .wiki-references ol li {
+    margin-bottom: 2px;
+    padding-left: 2px;
+  }
+
+  /* ============== CATEGORIES ============== */
+  .wiki-categories {
+    border-top: 1px solid var(--wiki-border-soft);
+    border-bottom: 1px solid var(--wiki-border-soft);
+    padding: 8px 0;
+    margin: 24px 0 12px;
+    font-size: 12px;
+    color: var(--wiki-text-secondary);
+  }
+  .wiki-categories-title {
+    font-weight: normal;
+    margin-right: 10px;
+    color: var(--wiki-text-secondary);
+  }
+  .wiki-categories a {
+    margin-right: 4px;
+    padding: 2px 4px;
+    border: 1px solid var(--wiki-border-soft);
+    background: #f8f9fa;
+    border-radius: 2px;
+    font-size: 11px;
+  }
+
+  /* ============== FOOTER WIKIPEDIA ============== */
+  .wiki-footer {
+    background: var(--wiki-bg);
+    border-top: 1px solid var(--wiki-border-light);
+    padding: 16px 20px;
+    font-size: 11px;
+    color: var(--wiki-text-secondary);
+    text-align: center;
+    font-family: sans-serif;
+  }
+  .wiki-footer a {
+    color: var(--wiki-link);
+    margin: 0 6px;
+  }
+
+  /* ============== PUNCHLINE FINALE (révélation) ============== */
+  .wiki-reveal {
+    max-width: 760px;
+    margin: 40px auto 20px;
+    padding: 24px 30px;
+    background: #fafaf7;
+    border: 1px solid #3B6D11;
+    border-radius: 6px;
+    font-family: 'Linux Libertine', serif;
+    color: var(--wiki-text);
+    font-size: 15px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .wiki-reveal::before {
+    content: "—";
+    position: absolute;
+    top: -14px;
+    left: 30px;
+    background: #fafaf7;
+    padding: 0 10px;
+    font-size: 20px;
+    color: #3B6D11;
+  }
+  .wiki-reveal-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #3B6D11;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    font-weight: 500;
+  }
+  .wiki-reveal-text p { margin: 0 0 10px; }
+  .wiki-reveal-text p:last-child { margin: 0; }
+  .wiki-reveal-sig {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(59, 109, 17, 0.25);
+    font-size: 13px;
+    color: var(--wiki-text-secondary);
+    font-style: italic;
+  }
+  .wiki-reveal-sig-name {
+    color: var(--wiki-text);
+    font-style: normal;
+    font-weight: 500;
+    filter: blur(5.5px);
+    user-select: none;
+  }
+
+  /* Petits détails Wikipédia */
+  .wiki-note {
+    background: #f8f9fa;
+    border: 1px solid var(--wiki-border-light);
+    border-left: 3px solid #3366cc;
+    padding: 8px 12px;
+    margin: 12px 0;
+    font-size: 13px;
+  }
+
+  .wiki-infobox td a {
+    color: var(--wiki-link);
+  }
+
+  /* Figures en clair */
+  .bda-card-img {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 10px;
+    background: linear-gradient(180deg, #E4EFD0 0%, #F1F6E7 100%);
+    color: #3B6D11;
+    font-family: 'Linux Libertine', serif;
+    font-style: italic;
+    font-size: 20px;
+  }
+  .cf-thumb {
+    background: linear-gradient(180deg, #f8f1e3 0%, #f5e9d0 100%);
+    color: #8B3A3A;
+    font-family: 'Linux Libertine', serif;
+    font-style: italic;
+    font-size: 17px;
+    padding: 26px 10px;
+  }
+  .smartbox-thumb {
+    background: linear-gradient(180deg, #ddeaf0 0%, #c8dce6 100%);
+    color: #1a5179;
+    font-family: 'Linux Libertine', serif;
+    font-style: italic;
+    font-size: 17px;
+    padding: 26px 10px;
+  }
+  .deezer-thumb {
+    background: linear-gradient(180deg, #ede0f0 0%, #d8c3e0 100%);
+    color: #581575;
+    font-family: 'Linux Libertine', serif;
+    font-style: italic;
+    font-size: 17px;
+    padding: 26px 10px;
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: white; }
+    .wiki-header, .wiki-tabs, .wiki-sidebar, .wiki-footer { display: none; }
+    .wiki-layout { grid-template-columns: 1fr; }
+    .wiki-content { padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header class="wiki-header">
+  <div class="wiki-header-inner">
+    <div class="wiki-logo">
+      <div class="wiki-logo-img"></div>
+      <div class="wiki-logo-text">
+        <strong>WIKIPÉDIA</strong>
+        <em>L'encyclopédie libre</em>
+      </div>
+    </div>
+    <div class="wiki-search">
+      <input type="text" value="Tombola de l'UPOS 2027" readonly>
+      <button class="wiki-search-btn" aria-label="Rechercher">🔍</button>
+    </div>
+    <div class="wiki-header-links">
+      <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjn9OSAmImUAxULAvsDHZxCAF0Q78AJegQIGRAB&usg=AOvVaw0aHtehaphMhOCAkCydRLZU" class="redlink">Créer un compte</a>
+      <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjn9OSAmImUAxULAvsDHZxCAF0Q78AJegQIGRAB&usg=AOvVaw0aHtehaphMhOCAkCydRLZU">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============== TABS ============== -->
+<div class="wiki-tabs">
+  <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjn9OSAmImUAxULAvsDHZxCAF0Q78AJegQIGRAB&usg=AOvVaw0aHtehaphMhOCAkCydRLZU" class="wiki-tab active">Article</a>
+  <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjn9OSAmImUAxULAvsDHZxCAF0Q78AJegQIGRAB&usg=AOvVaw0aHtehaphMhOCAkCydRLZU" class="wiki-tab">Discussion</a>
+  <div class="wiki-tabs-spacer"></div>
+  <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjn9OSAmImUAxULAvsDHZxCAF0Q78AJegQIGRAB&usg=AOvVaw0aHtehaphMhOCAkCydRLZU" class="wiki-tab">Lire</a>
+  <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjn9OSAmImUAxULAvsDHZxCAF0Q78AJegQIGRAB&usg=AOvVaw0aHtehaphMhOCAkCydRLZU" class="wiki-tab">Modifier</a>
+  <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjn9OSAmImUAxULAvsDHZxCAF0Q78AJegQIGRAB&usg=AOvVaw0aHtehaphMhOCAkCydRLZU" class="wiki-tab">Modifier le code</a>
+  <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjn9OSAmImUAxULAvsDHZxCAF0Q78AJegQIGRAB&usg=AOvVaw0aHtehaphMhOCAkCydRLZU" class="wiki-tab">Voir l'historique</a>
+</div>
+
+<!-- ============== LAYOUT ============== -->
+<div class="wiki-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="wiki-sidebar">
+    <div class="wiki-sidebar-section">
+      <div class="wiki-sidebar-title"><strong>Navigation</strong></div>
+      <a href="#" class="wiki-sidebar-link">Accueil</a>
+      <a href="#" class="wiki-sidebar-link">Portails thématiques</a>
+      <a href="https://fr.wikipedia.org/wiki/Tigre" class="redlink">Article au hasard</a>
+      <a href="#" class="wiki-sidebar-link">Contact</a>
+    </div>
+    <div class="wiki-sidebar-section">
+      <div class="wiki-sidebar-title"><strong>Article connexe</strong></div>
+      <a href="https://waelitopepito.github.io/defi_2/" class="redlink" target="_blank"> Mon défi 2 avec les mails</a>
+    </div>
+    <div class="wiki-sidebar-section">
+      <div class="wiki-sidebar-title"><strong>Contribuer</strong></div>
+      <a href="#" class="wiki-sidebar-link">Débuter sur Wikipédia</a>
+      <a href="#" class="wiki-sidebar-link">Aide</a>
+      <a href="#" class="wiki-sidebar-link">Communauté</a>
+      <a href="#" class="wiki-sidebar-link">Modifications récentes</a>
+      <a href="#" class="wiki-sidebar-link">Faire un don</a>
+    </div>
+    <div class="wiki-sidebar-section">
+      <div class="wiki-sidebar-title"><strong>Outils</strong></div>
+      <a href="#" class="wiki-sidebar-link">Pages liées</a>
+      <a href="#" class="wiki-sidebar-link">Suivi des pages liées</a>
+      <a href="#" class="wiki-sidebar-link">Téléverser un fichier</a>
+      <a href="#" class="wiki-sidebar-link">Pages spéciales</a>
+      <a href="#" class="wiki-sidebar-link">Lien permanent</a>
+      <a href="#" class="wiki-sidebar-link">Informations sur la page</a>
+      <a href="#" class="wiki-sidebar-link">Citer cette page</a>
+    </div>
+    <div class="wiki-sidebar-section">
+      <div class="wiki-sidebar-title"><strong>Imprimer/exporter</strong></div>
+      <a href="#" class="wiki-sidebar-link">Créer un livre</a>
+      <a href="#" class="wiki-sidebar-link">Télécharger en PDF</a>
+      <a href="#" class="wiki-sidebar-link">Version imprimable</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="wiki-content">
+
+    <div class="wiki-breadcrumb">
+      <a href="#">Une page de Wikipédia, l'encyclopédie libre.</a>
+    </div>
+
+    <h1 class="wiki-title">Tombola de l'UPOS 2027</h1>
+    <div class="wiki-subtitle">Un article de Wikipédia, l'encyclopédie libre.</div>
+
+    <!-- Featured article banner -->
+    <div class="wiki-featured">
+      <span class="wiki-featured-star">⭐</span>
+      <div>
+        <strong>Cet article est reconnu comme « <a href="#">article de qualité</a> »</strong> depuis sa promotion le 25 avril 2026. Pour toute information complémentaire, consulter <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://fr.linkedin.com/in/alixia-hars-344031285&ved=2ahUKEwiepNKl4YiUAxWxKvsDHY_yKoQQFnoECB4QAQ&usg=AOvVaw2VGaXbtkgLQAvNPqczOop1" class="redlink">Alixia</a> et le <a href="#">BDA 17.0</a>.
+      </div>
+    </div>
+
+    <!-- INFOBOX -->
+    <aside class="wiki-infobox">
+      <div class="wiki-infobox-title">Tombola de l'UPOS 2027</div>
+      <div class="wiki-infobox-image">
+      <a href="https://imgbb.com/"><img src="https://i.ibb.co/Jj9kXsWN/images.jpg" alt="images" border="0"></a>
+      <div class="wiki-infobox-caption">Logo du BDA, organisateur de l'événement.</div>
+
+      <div class="wiki-infobox-section">Informations générales</div>
+      <table>
+        <tr><th>Type</th><td>Tombola de salopard</td></tr>
+        <tr><th>Édition</th><td>14<sup>e</sup></td></tr>
+        <tr><th>Date</th><td>Mars 2027<sup class="reference"><a href="#cite-1">[1]</a></sup></td></tr>
+        <tr><th>Lieu</th><td><a href="#">Les Folies Bergères (lieu à confirmer selon l'année) </a>, Paris</td></tr>
+        <tr><th>Participants</th><td>≈ 1 600 spectateurs</td></tr>
+        <tr><th>Pays</th><td>🇫🇷 France</td></tr>
+      </table>
+
+      <div class="wiki-infobox-section">Organisation</div>
+      <table>
+        <tr><th>Organisateur</th><td><a href="#">Bureau des Arts 18.0</a></td></tr>
+        <tr><th>Président</th><td><a href="#" class="redlink">Confidentiel<sup class="reference"><a href="#cite-2">[2]</a></sup></a></td></tr>
+        <tr><th>Vice-président Partenariats</th><td><a href="#" class="redlink">███ ██████████</a></td></tr>
+        <tr><th>Partenaire historique</th><td><a href="#">La Médicale</a></td></tr>
+      </table>
+
+      <div class="wiki-infobox-section">Lots</div>
+      <table>
+        <tr><th>Nombre de lots</th><td>3</td></tr>
+        <tr><th>Valeur totale</th><td>≈ 470 €<sup class="reference"><a href="#cite-3">[3]</a></sup></td></tr>
+        <tr><th>Coût pour l'association</th><td>0 €</td></tr>
+        <tr><th>Origine</th><td>Partenariats externes</td></tr>
+        <tr><th>Plans de repli</th><td>3 identifiés<sup class="reference"><a href="#cite-18">[18]</a></sup></td></tr>
+      </table>
+
+      <div class="wiki-infobox-section">Chronologie</div>
+      <table>
+        <tr><th>Édition précédente</th><td><a href="#" class="redlink">Tombola de l'UPOS 2026</a></td></tr>
+        <tr><th>Édition suivante</th><td><a href="#" class="redlink">Tombola de l'UPOS 2028</a></td></tr>
+      </table>
+    </aside>
+
+    <!-- CHAPÔ -->
+    <p>La <strong>Tombola de l'UPOS 2027</strong> est la quatorzième édition de la tombola organisée chaque année lors de l'<a href="#">Université Paris Cité On Stage</a>, spectacle artistique annuel du <a href="#">Bureau des Arts</a> de la <a href="#">Faculté de Médecine de l'Université Paris Cité</a>. Elle se tient devant un public de 1 600 spectateurs aux <a href="#">Folies Bergères</a> (mais pas toujours), et a tellement marqué les spectateurs qu'on a décidé d'en faire une page wikipédia.</p>
+
+    <p>L'édition 2027 est notable pour être entièrement financée par des partenariats externes<sup class="reference"><a href="#cite-4">[4]</a></sup>, grâce à des lots choisis avec amour par le VP Part. Les trois lots remis: deux invitations pour le festival <a href="https://www.solidays.org" class="redlink"> Solidays</a>, deux places à la <a href="https://www.comedie-francaise.fr " class="redlink">Comédie-Française</a>, et un abonnement <a href="https://www.deezer.com/fr/">Deezer Premium</a> représentent une valeur cumulée d'environ 470 euros<sup class="reference"><a href="#cite-3b">[3]</a></sup>, sans coût direct pour l'asso.</p>
+
+    <p>L'édition 2027 marque également des changements par rapport aux éditions précédentes : le lancement d'un partenariat sur le long terme avec la <a href="#">Comédie-Française</a> ;  on a veillé dans cette tombola à respecter l'éthique dans la sélection des partenaires<sup class="reference"><a href="#cite-20">[20]</a></sup> ; on a également prévu des solutions de subtitution pour chacun des trois lots si ils décident de ne pas participer à l'évènement.</p>
+
+    <!-- TOC -->
+    <div class="wiki-toc" id="toc">
+      <div class="wiki-toc-title">Sommaire</div>
+      <ol>
+        <li><a href="#historique">Historique</a>
+          <ol>
+            <li><a href="#tradition">Tradition à l'UPOS</a></li>
+            <li><a href="#evolution">Évolution du modèle</a></li>
+          </ol>
+        </li>
+        <li><a href="#preparation">Préparation de l'édition 2027</a>
+          <ol>
+            <li><a href="#methode">Méthode de prospection</a></li>
+            <li><a href="#principes">Principes directeurs</a></li>
+          </ol>
+        </li>
+        <li><a href="#lots">Les trois lots</a>
+          <ol>
+            <li><a href="#lot1">Premier prix : Festival Solidays</a></li>
+            <li><a href="#lot2">Deuxième prix : Comédie-Française</a></li>
+            <li><a href="#lot3">Troisième prix : Deezer Premium</a></li>
+          </ol>
+        </li>
+        <li><a href="#plansb">Plans de repli</a>
+          <ol>
+            <li><a href="#plansb1">Substitution du premier prix : bon SNCF Connect</a></li>
+            <li><a href="#plansb2">Substitution du deuxième prix : Théâtre du Rond-Point</a></li>
+            <li><a href="#plansb3">Substitution du troisième prix : carte UGC Illimité</a></li>
+          </ol>
+        </li>
+        <li><a href="#ecartes">Partenaires écartés</a></li>
+        <li><a href="#etat">État des démarches au 26 avril 2026</a></li>
+        <li><a href="#partenaires">Partenaires</a></li>
+        <li><a href="#reception">Réception</a></li>
+        <li><a href="#heritage">Héritage</a></li>
+        <li><a href="#voiraussi">Voir aussi</a></li>
+        <li><a href="#references">Notes et références</a></li>
+      </ol>
+    </div>
+
+    <!-- HISTORIQUE -->
+    <h2 id="historique">Historique</h2>
+
+    <h3 id="tradition">Tradition à l'UPOS</h3>
+    <p>La tombola constitue un temps fort de l'<a href="#">UPOS</a>, qui existe depuis 2014 sous la forme de Diderot's got talent. Elle repose sur un tirage au sort effectué parmi les spectateurs présents dans la salle.</p>
+
+    <p>Au fil des éditions, la tombola est devenue un  vrai moment fort de la soirée. Un spectateur interrogé (source tqt) nous a même avoué qu'il a eu un petit crush sur Alixia lors de son intervention sur scène.<sup class="reference"><a href="#cite-5">[5]</a></sup>.</p>
+
+    <h3 id="evolution">Évolution du modèle</h3>
+    <p>L'édition 2026, sous la vice-présidence partenariats de <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://fr.linkedin.com/in/alixia-hars-344031285&ved=2ahUKEwiepNKl4YiUAxWxKvsDHY_yKoQQFnoECB4QAQ&usg=AOvVaw2VGaXbtkgLQAvNPqczOop1" class="redlink">Alixia</a>, introduit trois lots offerts devenus célèbres : un spa, un dîner pour deux en restaurant parisien, et 2 enceintes Bose. Ce choix est rétrospectivement considéré comme un tournant dans le cercle très fermé des concepteurs de tombola.<sup class="reference"><a href="#cite-6">[6]</a></sup>.</p>
+
+    <p>L'édition 2027 prolonge cette logique en poussant ce principe directeur : l'intégralité des lots est issue de partenariats, aucun achat direct n'étant effectué par l'association.</p>
+
+    <!-- PREPARATION -->
+    <h2 id="preparation">Préparation de l'édition 2027</h2>
+
+
+    <h3 id="methode">Méthode de prospection</h3>
+    <p>La préparation de la tombola 2027 débute en avril 2026, soit près d'un an avant l'événement. Le vice-président partenariats, nouvellement élu, choisit de rompre avec la logique jusqu'alors dominante consistant à rechercher successivement les lots un à un. Il privilégie une approche dite <em>de portefeuille</em>, dans laquelle les trois lots sont pensés comme un ensemble cohérent avant même le démarchage des partenaires<sup class="reference"><a href="#cite-7">[7]</a></sup>.</p>
+
+    <p>Cette méthode s'appuie sur trois temps distincts : une phase de cadrage des besoins (quels types de lots donneront l'effet "wahou ça claque"), une phase de sélection des partenaires cibles (sur la base de la cohérence avec les valeurs du Bureau des Arts et de la faisabilité du partenariat (on voulait que ferrari offre un lot mais askip c'était trop ambitieux)), puis une phase de rédaction de trois courriers personnalisés, chacun adapté à l'institution de son destinataire.</p>
+
+    <h3 id="principes">Principes directeurs</h3>
+    <p>La feuille de route adoptée en avril 2026 repose sur quatre principes que le vice-président partenariats a détaillé dans sa méthode (cf onglet "défi 2 pour les plus curieux)<sup class="reference"><a href="#cite-8">[8]</a></sup> :</p>
+
+    
+    <!-- LOTS -->
+    <h2 id="lots">Les trois lots</h2>
+
+    <h3 id="lot1">Premier prix : Festival Solidays</h3>
+
+    <div class="wiki-thumb">
+      
+      <div class="wiki-thumb" ></div>
+      <div><a href="https://imgbb.com/"><img src="https://i.ibb.co/Kj5DK9X8/Unknown.png" alt="Unknown" border="0"></a></div>
+      <div class="wiki-thumb-caption">Le premier prix prend la forme de deux invitations pour le festival <a href="#">Solidays</a>, organisé par <a href="#">Solidarité Sida</a>.</div>
+    </div>
+
+    <p>Le premier prix de l'édition 2027 consiste en deux invitations pour le festival <a href="#">Solidays</a>, deuxième plus grand festival de musiques actuelles français, qui se tient chaque année en juin à l'<a href="#">Hippodrome ParisLongchamp</a>. Solidays est organisé depuis 1999 par l'association <a href="#">Solidarité Sida</a>, dont l'intégralité des bénéfices est reversée à des programmes de prévention et d'aide aux malades.</p>
+
+    <p>Ce choix est présenté dans mon défi comme l'illustration du quatrième principe directeur du rendu (<em>protéger l'image du BDA</em>). Là où d'autres options étaient envisagées au stade initial, notamment les coffrets cadeaux des grandes marques de tourisme, qui auraient pu présenter des risques pour l'image de l'asso, Solidays est vraiment cohérent pour une asso issue d'une faculté de médecine : un partenaire de santé publique, dont la mission de prévention rejoint directement les enjeux de notre formation médicale<sup class="reference"><a href="#cite-9">[9]</a></sup>.</p>
+
+    <p>Le partenariat est pensé de cette manière pour augmenter les chances d'obtenir des places: je l'ai imaginé comme un moyen d'insister sur le lien entre <em>un évènement qui fait le lien entre culture musicale et santé</em>. Le Bureau des Arts s'engage à relayer le message de prévention de Solidarité Sida auprès des 1 600 étudiants de 2e et 3e année de médecine de l'Université Paris Cité , relayant le message auprès du reste de la promotion. Cette dimension transforme un part ponctuel en une coopération entre deux assos à la cible commune : la jeunesse étudiante en santé.</p>
+
+    <p>Sur le plan de la réalisation, ce partenariat est aussi le plus incertain du portefeuille, car solidarité Sida n'a pas pour habitude d'offrir des places de festival à des associations étudiantes externes. Le dossier souligne donc que la <em>vigilance reste de mise</em> jusqu'à réception d'une réponse formelle, et que le plan de substitution (bon SNCF Connect) est préparé pour être utilisé  en cas d'échec<sup class="reference"><a href="#cite-9b">[9b]</a></sup>.</p>
+
+    <h3 id="lot2">Deuxième prix : Comédie-Française</h3>
+
+    <div class="wiki-thumb">
+      <div <a href="https://imgbb.com/"><img src="https://i.ibb.co/3mSCKQPc/Unknown.jpg" alt="Unknown" border="0"></a></div>
+      
+      <div class="wiki-thumb-caption">Le deuxième prix associe deux places à la <a href="#">Comédie-Française</a> au lancement d'un partenariat long terme avec le pôle théâtre.</div>
+    </div>
+
+    <p>Le deuxième prix se présente sous la forme de deux places à la <a href="#">Comédie-Française</a>, pour une représentation de la programmation de la saison 2026-2027. Ce lot est stratégiquement distinct des autres : il constitue l'amorce d'un partenariat plus ambitieux entre le Bureau des Arts et l'institution.</p>
+
+    <p>Dans son courrier adressé au service mécénat de la Comédie-Française en avril 2026, le vice-président partenariats propose en effet une collaboration à deux niveaux. D'une part, la mise à disposition des deux places en lot de tombola, en cohérence avec la <a href="#">mission de service public</a> assignée au théâtre depuis sa fondation en 1680. D'autre part, la construction d'un partenariat durable avec l'asso</p>
+
+    <p>Cette double proposition est présentée dans le dossier comme une illustration du principe 3 du défi 2 : là où un partenaire commercial attend de la visibilité marketing, une institution publique est plus sensible à l'alignement avec sa mission. Le courrier argumente ainsi sur ce registre, présentant le Bureau des Arts comme relais du mandat d'accessibilité culturelle porté par la Comédie-Française depuis plus de trois siècles<sup class="reference"><a href="#cite-10">[10]</a></sup>.</p>
+
+    <h3 id="lot3">Troisième prix : Deezer Premium</h3>
+
+    <div class="wiki-thumb">
+      <div class="wiki-thumb" <a href="https://imgbb.com/"><img src="https://i.ibb.co/GqTYGG7/kkdkkd.png" alt="kkdkkd" border="0"></a></div>
+      <div class="wiki-thumb-caption">Le troisième prix est un abonnement Deezer Premium d'une durée d'un an, d'une valeur d'environ 120 €.</div>
+    </div>
+
+    <p>Le troisième prix est un abonnement <a href="#">Deezer Premium</a> d'une durée de douze mois, d'une valeur d'environ 120 euros. Bien que le plus modeste à première vue (mais c'est la personnalité qui compte), ce lot est présenté dans le dossier comme celui dont la <em>durée de présence dans la vie du gagnant</em> est la plus longue, ce qui souligne que la valeur perçue d'un lot ne se mesure pas uniquement à son prix.</p>
+
+    <p>Le choix de <a href="#">Deezer</a>, plateforme de streaming fondée à Paris en 2007, repose sur un double argument : son ancrage français, d'abord, en cohérence avec la ligne de partenaires nationaux privilégiée par le Bureau des Arts ; sa mission de démocratisation de l'accès à la musique à tous, ensuite, alignée avec la place centrale qu'occupent les pôles orchestre, chant et danse dans l'identité artistique de l'association<sup class="reference"><a href="#cite-11">[11]</a></sup>.</p>
+
+    <p>Ce lot est également pensé comme un prolongement narratif de la soirée UPOS elle-même : là où le spectacle s'achève après le dernier numéro, l'abonnement Deezer offre au gagnant <em>une année de musique</em>, comme une extension naturelle de l'expérience vécue aux Folies Bergères.</p>
+
+    <!-- PLANS DE REPLI -->
+    <h2 id="plansb">Plans de repli</h2>
+
+    <p>La préparation de l'édition 2027 comporte, pour chacun des trois lots principaux, une piste de substitution qu'on peut mettre en place en cas d'échec du partenariat initial. Étant donné le peu de temps qu'on avait pour faire ce défi, j'ai déjà envoyé tous les mails aux éventuels partenaires, masi aucun n'a répondu pour le moment. Cette organisation en <em>portefeuille </em> correspond exactement au principe 1 de mon défi 2<sup class="reference"><a href="#cite-19">[19]</a></sup>.</p>
+
+    <p>Mon rendu insiste particulièrement sur le caractère <em>réaliste</em> de ces plans de repli : pour chaque lot, le partenaire de substitution est choisi parmi les acteurs ayant un programme de partenariat formel et documenté, capables de répondre dans des délais courts. La rapidité d'activation est présentée comme une condition essentielle, le calendrier de la tombola ne tolérant pas d'incertitudes sur la composition des lots.</p>
+
+    <h3 id="plansb1">Substitution du premier prix : bon SNCF Connect</h3>
+
+    <p>Le premier prix (deux invitations pour le festival Solidays) est doublé par une piste de substitution sollicitant directement la <a href="#">SNCF Connect</a>, dans le cadre de son programme <em>Cultures et Jeunesse</em>. Le lot envisagé prend la forme d'un bon d'achat de 200 euros, permettant au gagnant d'organiser un week-end hors de Paris dans les destinations de son choix.</p>
+
+    <p>Ce plan de substitution est explicitement caractérisé dans le dossier comme « moins risqué » que le partenariat principal : la SNCF Connect dispose d'un programme partenariat structuré, ouvert aux associations étudiantes et aux acteurs du monde culturel. </p>
+
+    <p>Au-delà de sa fonction de filet de sécurité, ce plan ouvre également la possibilité, en cas de succès du partenariat, d'étendre la relation à une carte préférentielle pour les 700 adhérents du Bureau des Arts sur l'ensemble de la saison. Le partenariat initialement pensé comme ponctuel se transformerait alors en relation durable, sur le modèle envisagé avec la Comédie-Française pour le deuxième prix.</p>
+
+    <h3 id="plansb2">Substitution du deuxième prix : Théâtre du Rond-Point</h3>
+
+    <p>Le deuxième prix (Comédie-Française) est doublé par une piste de substitution auprès du <a href="#">Théâtre du Rond-Point</a>, scène parisienne (certes plus petite mais tout aussi riche culturellement), réputée pour sa programmation contemporaine et sa ligne éditoriale tournée vers le théâtre d'auteur vivant.</p>
+
+    <p>Le choix du Rond-Point n'est pas anodin : il conserve l'architecture de la proposition initialement adressée à la Comédie-Française: deux places pour la tombola. Mais il déplace l'angle d'approche : là où la Comédie-Française est sollicitée sur sa mission de service public, le Rond-Point l'est sur la proximité de DA avec le profil d'un public étudiant curieux. Le dossier souligne que cette adaptation du registre selon le partenaire relève directement du troisième point que j'ai soulevé dans le défi 2.</p>
+
+    <h3 id="plansb3">Substitution du troisième prix : carte UGC Illimité</h3>
+
+    <p>Le troisième prix (abonnement Deezer Premium) est doublé par une piste de substitution auprès d'<a href="#">UGC</a>, sous la forme d'une carte UGC Illimité d'une durée de six mois. Ce choix présente une particularité notable dans l'économie du dossier : il se double d'une logique de continuité avec d'autres éléments du portefeuille de partenariats de l'association, UGC figurant déjà parmi les cibles identifiées dans le rendu du défi 2.</p>
+
+    <p>Sur le fond, la carte UGC Illimité donne accès non seulement au réseau des salles UGC (ce qui certes, n'est pas forcément dans la direction artistique du pôle ciné) mais également à plusieurs cinémas indépendants parisiens (MK2, Le Louxor, Le Christine, entre autres). Cette double accessibilité: à la fois le cinéma indépendants et certaines salles parisiennes, est présentée dans le dossier comme  cohérente avec l'identité culturelle du Bureau des Arts, dont l'une des ambitions affichées est de rendre accessibles à ses adhérents les formes artistiques un peu niches autant que les formes grand public.</p>
+
+    <!-- PARTENAIRES ÉCARTÉS -->
+    <h2 id="ecartes">Partenaires écartés</h2>
+
+    <p>La préparation de l'édition 2027 a donné lieu, en amont du démarchage, à un travail de filtrage des partenaires potentiels selon qu'ils fonctionnent ou non avec l'identité de l'association. Ce filtrage, présenté dans le dossier comme la mise en application du 4e principe évoqué dans le défi 2, a conduit à supprimer plusieurs pistes initialement envisagées<sup class="reference"><a href="#cite-20">[20]</a></sup>.</p>
+
+    <p>Une des ces entreprises est le groupe <a href="#">Smartbox</a>, leader français du coffret cadeau, que j'ai d'abord retenu pour le premier prix dans la mesure où son catalogue « Séjour pour deux » correspondait parfaitement au lot "évasion" que je comptais proposer. Le partenariat a été écarté lorsque la documentation publique sur  de l'entreprise a révélé que son principal actionnaire et cofondateur est par ailleurs le promoteur d'un projet de financement de mouvements politiques d'extrême droite violents<sup class="reference"><a href="#cite-21">[21]</a></sup>.</p>
+
+    <p>Le dossier souligne que cet écartement ne relève pas d'une posture politique du Bureau des Arts mais d'une logique de protection de son image et de cohésion de ses adhérents : une partie du public étudiant de l'Université Paris Cité étant susceptible d'identifier ce financement comme une prise de parti, la mise en avant de Smartbox lors de l'UPOS aurait pu nourrir des tensions internes et fragiliser le caractère rassembleur de l'événement.</p>
+
+    <p>Cet épisode a conduit à la révision intégrale du premier prix au profit d'un partenariat avec <a href="#">Solidarité Sida</a>, dont le profil éthique et associatif s'inscrit dans une logique inverse de celle de Smartbox.</p>
+
+    <!-- ÉTAT DES DÉMARCHES -->
+    <h2 id="etat">État des démarches au 26 avril 2026</h2>
+
+    <p>Au moment de la rédaction de la présente notice, les courriers de sollicitation aux trois partenaires principaux (Solidarité Sida, Comédie-Française, Deezer) ont été rédigés et envoyés. Aucune réponse formelle n'a encore été reçue, le calendrier prévoyant un délai de quelques jours à plusieurs semaines selon la nature des destinataires<sup class="reference"><a href="#cite-22">[22]</a></sup>.</p>
+
+    <p>Les pistes de substitution (SNCF Connect, Théâtre du Rond-Point, UGC) sont quant à elles préparées mais non sollicitées : conformément à la méthode que j'ai utilisées dans le dossier, leur démarchage ne sera engagé qu'à réception d'une réponse, positive ou négative, du partenaire principal correspondant.</p>
+
+    <!-- PARTENAIRES -->
+    <h2 id="partenaires">Partenaires</h2>
+
+    <p>L'édition 2027 est caractérisée par la diversité de ses partenaires et de leurs registres. Cette hétérogénéité est assumée dans le dossier comme une stratégie visant à <em>ne pas faire reposer l'événement sur une seule relation</em>, et à ouvrir autant de portes que possible pour les saisons suivantes.</p>
+
+    <table class="wiki-table">
+      <caption>Récapitulatif des partenariats, édition 2027</caption>
+      <thead>
+        <tr><th>Partenaire</th><th>Registre</th><th>Lot associé</th><th>Contrepartie principale</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="#">Solidarité Sida</a> / Solidays</td><td>Association d'utilité publique</td><td>1<sup>er</sup> prix</td><td>Annonce scène + Instagram + relais prévention auprès des étudiants en médecine</td></tr>
+        <tr><td><a href="#">Comédie-Française</a></td><td>Institution publique</td><td>2<sup>e</sup> prix + partenariat long terme</td><td>Mention scène + partenariat pour le pôle théâtre ??</td></tr>
+        <tr><td><a href="#">Deezer</a></td><td>Plateforme culturelle</td><td>3<sup>e</sup> prix</td><td>Annonce scène + Instagram</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="ptheatre">Le cas particulier de la Comédie-Française</h3>
+    <p>Parmi les trois partenariats, celui avec la Comédie-Française est présenté par les observateurs comme le plus ambitieux<sup class="reference"><a href="#cite-12">[12]</a></sup>. Là où Deezer relève d'une logique de <em>cadeau événementiel</em> classique, la Comédie-Française est sollicitée dans une logique de <em>relation institutionnelle</em>, plus proche d'un mécénat culturel que d'un échange commercial.</p>
+
+    <!-- RECEPTION -->
+    <h2 id="reception">Réception</h2>
+    <p>La tombola de l'édition 2027 est  saluée par les adhérents présents à la soirée<sup class="reference"><a href="#cite-13">[13]</a></sup>. L'annonce du partenariat avec la Comédie-Française, en particulier, est ponctuée d'une ovation remarquée: un spectateur témoigne: "wadafak chokbar du partenariat".</p>
+
+    <p>Sur le compte Instagram <a href="#">@bda_up</a>, la série de publications accompagnant la tombola a entraîné beaucoup de hype<sup class="reference"><a href="#cite-14">[14]</a></sup>.</p>
+
+    <blockquote>« Cette édition de la tombola aura marqué les esprits et permis de construire avec le BDA des relations durables, dans le respect de notre identité. »<br><span style="font-size:11px;">Rapport d'activité 2026-2027 du Bureau des Arts<sup class="reference"><a href="#cite-15">[15]</a></sup></span></blockquote>
+
+    <!-- HERITAGE -->
+    <h2 id="heritage">Héritage</h2>
+
+
+    <p>À plus long terme, l'objectif est de construire des partenariats durables et qui plaisent pour les lots de l'UPOS<sup class="reference"><a href="#cite-17">[17]</a></sup>.</p>
+
+    <!-- VOIR AUSSI -->
+    <h2 id="voiraussi">Voir aussi</h2>
+    <h3>Articles connexes</h3>
+    <ul class="wiki-ul">
+      <li><a href="../">Démarchage des partenariats du Bureau des Arts 18.0 (2026/2027)</a>  rendu du défi 2 du même candidat</li>
+      <li><a href="#">Bureau des Arts de la Faculté de Médecine de l'Université Paris Cité</a></li>
+      <li><a href="#">Université Paris Cité On Stage</a></li>
+      <li><a href="#">Folies Bergères</a></li>
+      <li><a href="#">Comédie-Française</a></li>
+      <li><a href="#" class="redlink">Tombola dans la vie associative étudiante en France</a></li>
+      <li><a href="#" class="redlink">Économie des partenariats événementiels étudiants</a></li>
+    </ul>
+
+    <h3>Liens externes</h3>
+    <ul class="wiki-ul">
+      <li><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/bda_up/&ved=2ahUKEwiv9bmhl4mUAxUYUaQEHduVGFoQFnoECCYQAQ&usg=AOvVaw2iyvs-yVcZCtxAjOQbLprS" class="redlink">Compte Instagram officiel du Bureau des Arts</a> (@bda_up)</li>
+      <li><a href="#">Site des Folies Bergères</a></li>
+    </ul>
+
+    <!-- REFERENCES -->
+    <h2 id="references">Notes et références</h2>
+    <div class="wiki-references">
+      <ol>
+        <li id="cite-1">« Programme officiel de l'UPOS 2027 », <em>Bulletin du Bureau des Arts</em>, n°18, mars 2027.</li>
+        <li id="cite-2">L'identité du président est volontairement omise dans le cadre de la procédure d'anonymisation des candidatures au bureau 18.0.</li>
+        <li id="cite-3">Valeur calculée sur la base des prix publics constatés en avril 2026 : Solidays (~250 € les 2 invitations 3 jours) + Comédie-Française (~100 €) + Deezer Premium 12 mois (~120 €).</li>
+        <li id="cite-4">« Un bureau sans dépenses : comment le BDA 18.0 a repensé ses tombolas », <em>La Gazette de la Faculté</em>, 18 mai 2027.</li>
+        <li id="cite-5">Enquête interne du pôle communication du BDA, novembre 2025, portant sur un échantillon de 67 adhérents.</li>
+        <li id="cite-6">Note de fin de mandat d'Alixia HARS, avril 2026.</li>
+        <li id="cite-7">Note de méthode du vice-président partenariats, avril 2026 : « Plutôt qu'un dump de 7 mails, j'ai voulu construire un document qui raconte aussi comment j'aborde le poste. »</li>
+        <li id="cite-8">quoi ? feur.</li>
+        <li id="cite-9">L'angle d'« alliance entre acteurs jeunesse et santé » est introduit dans le courrier adressé à Solidarité Sida, le 26 avril 2026, dans une formulation insistant sur "la convergence des cibles entre une fédération étudiante de médecine et une ONG de santé publique".</li>
+        <li id="cite-9b">Note de méthode du vice-président partenariats, avril 2026 : « Le partenariat Solidays est le plus ambitieux du portefeuille, mais aussi le plus incertain. La vigilance reste de mise et le plan B (SNCF Connect) est calibré pour être déclenché immédiatement en cas de refus. »</li>
+        <li id="cite-10">Courrier adressé au service mécénat de la Comédie-Française, 26 avril 2026.</li>
+        <li id="cite-11">Courrier adressé à Deezer, 26 avril 2026.</li>
+        <li id="cite-12">Compte-rendu de la RDB du 15 mai 2026.</li>
+        <li id="cite-13">Enquête de satisfaction post-UPOS 2027, source= tqt.</li>
+        <li id="cite-14">Données statistiques du compte <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/bda_up/&ved=2ahUKEwiv9bmhl4mUAxUYUaQEHduVGFoQFnoECCYQAQ&usg=AOvVaw2iyvs-yVcZCtxAjOQbLprS">@bda_up</a>, consultées le 10 mars 2027.</li>
+        <li id="cite-15">Rapport d'activité 2026-2027 du Bureau des Arts, p.47.</li>
+        <li id="cite-16">Rapports d'activité successifs du Bureau des Arts (2027-2028 à 2029-2030).</li>
+        <li id="cite-17">La conformité de cet article avec les <a href="#">critères d'admissibilité</a> de Wikipédia a fait l'objet d'une <a href="#">discussion dédiée</a>. L'article a été conservé à l'issue du vote, avec une majorité de 7 voix pour, 2 contre, 23 violonistes ayant finalement tranché en sa faveur.</li>
+        <li id="cite-18">Note de méthode du vice-président partenariats, avril 2026 : « Chaque lot principal est adossé à une piste de substitution équivalente, activable dans les 48h suivant un refus. »</li>
+        <li id="cite-19">Ibid. Ce principe est hérité du rendu du défi précédent du même candidat, dans lequel un plan de sécurité similaire avait été construit pour le sponsor majoritaire de l'association.</li>
+        <li id="cite-20">Le filtre éthique appliqué au stade de la sélection des partenaires est documenté dans la note de méthode comme une « due diligence préalable au démarchage », visant à s'assurer qu'aucun partenaire retenu ne présente un risque de polarisation au sein du public ciblé.</li>
+        <li id="cite-21">Voir <em>Le Monde</em>, 9 août 2024, « Pierre-Édouard Stérin, le milliardaire qui veut financer l'union des droites » ; <em>Politis</em>, 12 septembre 2024 ; et la fiche Wikipédia de l'intéressé, section « Projet Périclès ».</li>
+        <li id="cite-22">État des démarches au 26 avril 2026 : courriers envoyés à Solidarité Sida, Comédie-Française et Deezer dans la semaine du 22 avril 2026. Aucune réponse formelle reçue à la date de rédaction de la présente notice.</li>
+      </ol>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="wiki-categories">
+      <span class="wiki-categories-title">Catégories :</span>
+      <a href="https://fr.wikipedia.org/wiki/Tombola">Tombola</a>
+      <a href="https://www.acrp-up.com/bda">Bureau des Arts</a>
+      <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://u-paris.fr/&ved=2ahUKEwiJtPfyl4mUAxUIKvsDHUaWF8EQFnoECCoQAQ&usg=AOvVaw3fx10FPiU1r9y2_xHy4Uh4">Université Paris Cité</a>
+      <a href="#">Vie associative étudiante française</a>
+      <a href="#">Événement culturel à Paris</a>
+      <a href="#">Solidarité Sida</a>
+      <a href="#">Événement de mars 2027</a>
+      <a href="#">Article de qualité</a>
+    </div>
+
+    <!-- ============ RÉVÉLATION FINALE ============ -->
+    <div class="wiki-reveal">
+      <div class="wiki-reveal-eyebrow">Note de l'auteur</div>
+      <div class="wiki-reveal-text">
+        <p>Cet article n'existe pas encore sur Wikipédia. Il a été écrit en avril 2026, soit presque un an avant les événements qu'il décrit, comme rendu du <strong>défi 3</strong> de mon aspirance au poste de VP Part du Bureau des Arts 18.0.</p>
+        <p>Ce format n'est pas un simple exercice de style : il est une manière de me <em>projeter dans le poste</em>, et dans le résultat qu'on s'engage à produire. Les trois lots présentés ici, les partenaires sollicités, la méthode exposée et les contreparties que j'ai mises en avant constituent la feuille de route réelle que j'ai utilisée et que j'utiliserai pendant mon mendat, et non une fiction.</p>
+        <p>Au moment de la rédaction de cette page, les courriers de sollicitation ont été envoyés mais aucune réponse formelle n'a encore été reçue. Tout ce qui est rédigé au passé dans cet article est donc encore à accomplir. Mais tout ce qui y est décrit est déjà, à l'instant où ces lignes sont écrites, engagé.</p>
+      </div>
+      <div class="wiki-reveal-sig">
+        <span class="wiki-reveal-sig-name">███ ██████████</span> — Candidat VP Partenariats, Bureau des Arts 18.0 — 26 avril 2026
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ============== FOOTER WIKIPEDIA ============== -->
+<footer class="wiki-footer">
+  <p>La dernière modification de cette page a été faite le 25 avril 2026.</p>
+  <p>Droit d'auteur : les textes sont disponibles sous <a href="#">licence Creative Commons attribution, partage dans les mêmes conditions</a> ; d'autres conditions peuvent s'appliquer.</p>
+  <p>
+    <a href="#">Politique de confidentialité</a> ·
+    <a href="#">À propos de Wikipédia</a> ·
+    <a href="#">Avertissements</a> ·
+    <a href="#">Contact</a> ·
+    <a href="#">Développeurs</a> ·
+    <a href="#">Déclaration sur les témoins (cookies)</a> ·
+    <a href="#">Version mobile</a>
+  </p>
+</footer>
+
+</body>
+</html>
